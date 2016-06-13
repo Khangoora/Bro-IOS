@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7702" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BroAppItunesArtwork-1024" translatesAutoresizingMaskIntoConstraints="NO" id="hYI-5Y-MVw">
+                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="hYI-5Y-MVw" secondAttribute="bottom" constant="-35" id="3Qh-7Q-4un"/>
+                <constraint firstItem="hYI-5Y-MVw" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="topMargin" constant="8" id="E0u-D4-9ML"/>
+                <constraint firstItem="hYI-5Y-MVw" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leadingMargin" constant="8" id="FJK-p9-zL8"/>
+                <constraint firstAttribute="trailing" secondItem="hYI-5Y-MVw" secondAttribute="trailing" id="KMY-9n-cn6"/>
+                <constraint firstAttribute="trailingMargin" secondItem="hYI-5Y-MVw" secondAttribute="trailing" constant="8" id="RCO-rf-XhJ"/>
+                <constraint firstItem="hYI-5Y-MVw" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="jLc-iy-Mrj"/>
+                <constraint firstItem="hYI-5Y-MVw" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="lOE-gJ-ld7"/>
+                <constraint firstAttribute="bottomMargin" secondItem="hYI-5Y-MVw" secondAttribute="bottom" constant="43" id="vbz-Y0-bAq"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <variation key="default">
+                <mask key="subviews">
+                    <exclude reference="hYI-5Y-MVw"/>
+                </mask>
+                <mask key="constraints">
+                    <exclude reference="3Qh-7Q-4un"/>
+                    <exclude reference="E0u-D4-9ML"/>
+                    <exclude reference="FJK-p9-zL8"/>
+                    <exclude reference="KMY-9n-cn6"/>
+                    <exclude reference="RCO-rf-XhJ"/>
+                    <exclude reference="jLc-iy-Mrj"/>
+                    <exclude reference="lOE-gJ-ld7"/>
+                    <exclude reference="vbz-Y0-bAq"/>
+                </mask>
+            </variation>
+            <variation key="heightClass=regular-widthClass=compact">
+                <mask key="subviews">
+                    <include reference="hYI-5Y-MVw"/>
+                </mask>
+                <mask key="constraints">
+                    <include reference="3Qh-7Q-4un"/>
+                    <exclude reference="E0u-D4-9ML"/>
+                    <exclude reference="FJK-p9-zL8"/>
+                    <include reference="KMY-9n-cn6"/>
+                    <exclude reference="RCO-rf-XhJ"/>
+                    <include reference="jLc-iy-Mrj"/>
+                    <include reference="lOE-gJ-ld7"/>
+                    <exclude reference="vbz-Y0-bAq"/>
+                </mask>
+            </variation>
+            <point key="canvasLocation" x="548" y="455"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="BroAppItunesArtwork-1024" width="320" height="480"/>
+    </resources>
+</document>

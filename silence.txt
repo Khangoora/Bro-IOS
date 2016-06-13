@@ -1,0 +1,134 @@
+//    FUNCTIONS FOR REMOVING BROS:
+
+
+//    var silencedBros = [String: String]()
+//    var brosThatSilencedYou = [String: String]()
+
+//    func populateFriends()
+//    {
+//        startLoading()
+//        var myArray:[AnyObject] = []
+//        var query = PFQuery(className:"Friend")
+//        query.whereKey("user", equalTo: PFUser.currentUser()!)
+//        query.findObjectsInBackgroundWithBlock { (objects: [AnyObject]?, error: NSError?) -> Void in
+//            if (error == nil) {
+//                var friendlyObjects = objects as! [PFObject]
+//                var friendlyStrings: [String] = []
+//                for broSilencedYouObject in friendlyObjects {
+//                    let broSilencedName = broSilencedYouObject.valueForKey("friend") as! String
+//                    friendlyStrings.append(broSilencedName as String!)
+//                    if (broSilencedYouObject.valueForKey("silence") != nil && broSilencedYouObject.valueForKey("silence") as! Bool) {
+//                        self.brosThatSilencedYou[broSilencedName] = broSilencedName
+//                    }
+//                }
+//                var userQuery = PFUser.query()
+//                userQuery?.whereKey("username", containedIn: friendlyStrings)
+//                userQuery!.findObjectsInBackgroundWithBlock {
+//                    (objects: [AnyObject]?, error: NSError?) -> Void in
+//                    self.stopLoading()
+//                    if (error != nil || objects == nil) {
+//                    } else {
+//                        var reversedObjects = objects?.reverse()
+//                        for object in reversedObjects as! [PFUser] {
+//                            let currentFriend = (object.username as String!)
+//                            if (!contains(self.friends, currentFriend)) {
+//                                self.friendObjects.insert(object as PFUser, atIndex: 0)
+//                                self.friends.insert(currentFriend, atIndex: 0)
+//                            }
+//                        }
+//                        self.friendsTableView.reloadData()
+//                    }
+//                }
+//            } else {
+//                self.showMessage("Error", message: "Something went wrong, please try refreshing.")
+//            }
+//        }
+//    }
+
+//    func mapToSilencedFriends() {
+//        var query = PFQuery(className: "Friend")
+//        query.whereKey("friend", equalTo: PFUser.currentUser()?.username as String!)
+//        query.findObjectsInBackgroundWithBlock { (objects: [AnyObject]?, error: NSError?) -> Void in
+//            if (error == nil) {
+//                println(objects?.count)
+//                for silencedBroObject in objects as! [PFObject] {
+//                    if (silencedBroObject.valueForKey("silence") != nil) {
+//                        var isBroSilenced = silencedBroObject.valueForKey("silence") as! Bool
+//                        if (isBroSilenced) {
+//                            var silencedBroName = silencedBroObject.valueForKey("user") as! PFUser
+//                            self.silencedBros[silencedBroName.objectId as String!] = silencedBroName.objectId as String!
+//                        }
+//                    }
+//
+//                }
+//            }
+//        }
+//    }
+//
+//    func silenceBro(silenceUser: PFUser, silence: Bool) {
+//        startLoading()
+//        var query = PFQuery(className: "Friend")
+//        query.whereKey("user", equalTo: silenceUser)
+//        query.whereKey("friend", equalTo: PFUser.currentUser()?.username as String!)
+//        query.findObjectsInBackgroundWithBlock{ (objects: [AnyObject]?, error: NSError?) -> Void in
+//            if (error != nil) {
+//                self.stopLoading()
+//                self.showMessage("Oops", message: "Something went wrong, please try again!")
+//            } else {
+//                for object in objects as! [PFUser] {
+//                    var friendObject = object as PFObject!
+//                    friendObject.setValue(silence, forKey: "silence")
+//                    friendObject.saveInBackground()
+//                }
+//                self.stopLoading()
+//                if (silence) {
+//                    self.showMessage("Silenced", message: "You will stop getting bro'ed by " + silenceUser.username! + " shortly.")
+//                } else {
+//                    self.showMessage("UnSilenced", message: "You have successfully unsilenced " + silenceUser.username! + ". You should start receiving bros shortly.")
+//                }
+//            }
+//        }
+//
+//    }
+
+    //    func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+    //        return false
+    //    }
+
+    //    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+    //        if (editingStyle == UITableViewCellEditingStyle.Delete)
+    //        {
+    //            println("You Pressed the Delete Button")
+    //        }
+    //    }
+    //
+    //
+    //    func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [AnyObject]? {
+    //        var silencedBroName = silencedBros[friends[indexPath.row] as String!]
+    //        var isSilenced = false
+    //        if (silencedBroName != nil && !silencedBroName!.isEmpty) {
+    //            isSilenced = true
+    //        }
+    //        let silence = UITableViewRowAction(style: .Default, title: isSilenced ? "Unsilence Bro" : "Silence Bro") { action, index in
+    //            self.silenceBro(self.friendObjects[indexPath.row], silence: !isSilenced)
+    //        }
+    //        return [silence]
+    //    }
+    //     func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell,
+    //        forRowAtIndexPath indexPath: NSIndexPath)
+    //    {
+    //        // Remove separator inset
+    //        if cell.respondsToSelector("setSeparatorInset:") {
+    //            cell.separatorInset = UIEdgeInsetsZero
+    //        }
+    //
+    //        // Prevent the cell from inheriting the Table View's margin settings
+    //        if cell.respondsToSelector("setPreservesSuperviewLayoutMargins:") {
+    //            cell.preservesSuperviewLayoutMargins = false
+    //        }
+    //
+    //        // Explictly set your cell's layout margins
+    //        if cell.respondsToSelector("setLayoutMargins:") {
+    //            cell.layoutMargins = UIEdgeInsetsZero
+    //        }
+    //    }
